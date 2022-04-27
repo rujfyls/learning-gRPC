@@ -1,0 +1,16 @@
+syntax = "proto3";
+package ru.feduncov.grpc;
+
+message HelloRequest {
+  string name = 1;
+//  1 это тэг, repeated повторяемая сторока это список
+  repeated string hobbies = 2;
+}
+
+message HelloResponse {
+  string greeting = 1;
+}
+
+service GreetingService {
+  rpc greeting(HelloRequest) returns (HelloResponse);
+}
